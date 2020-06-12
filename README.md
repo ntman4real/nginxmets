@@ -1,7 +1,7 @@
 # nginxmets
 
 
-####To configure the custom-metrics rule and cusotmizong the name to "myrequests":
+#### To configure the custom-metrics rule and cusotmizong the name to "myrequests":
 ````
 rules:
 - seriesQuery: nginx_vts_main_connections
@@ -13,7 +13,7 @@ rules:
   metricsQuery: sum(<<.Series>>{status="active"}) by (<<.GroupBy>>)
 ````
 
-####To configure an HPA, here is the terraform, once again indicating the name for the metric from the custom-metrics rule, "my requests":
+#### To configure an HPA, here is the terraform, once again indicating the name for the metric from the custom-metrics rule, "my requests":
 ````
 resource "kubernetes_horizontal_pod_autoscaler" "main" {
   metadata {
